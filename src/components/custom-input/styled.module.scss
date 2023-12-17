@@ -1,0 +1,45 @@
+.form {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .label {
+        color: rgba(27, 43, 65, 0.72);
+        font-size: 12px;
+        font-weight: 500;
+        line-height: normal;
+        align-self: flex-start;
+        margin-left: 5px;
+        margin-bottom: 5px;
+
+
+        .required-star {
+            color: red;
+            margin-left: 5px; 
+    }
+    }
+    .customAntInput {
+        width: 363px;
+        height: 57px;
+        flex-shrink: 0;
+        border-radius: 3px;
+        border: 1px solid rgba(28, 55, 90, 0.16);
+        margin-bottom: 10px;
+        &:focus {
+            border-color: #1676F3; 
+        }
+    }
+
+    &:focus-within label {
+        color: #1676F3; 
+    }
+
+}
+
+
+
+
+
+
+

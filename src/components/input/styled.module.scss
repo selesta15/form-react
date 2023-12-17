@@ -1,0 +1,62 @@
+.form {
+    label {
+        color: rgba(27, 43, 65, 0.72);
+        font-size: 12px;
+        font-weight: 500;
+        line-height: normal;
+        align-self: flex-start;
+        margin-left: 5px;
+
+
+        .required-star {
+            color: red;
+            margin-left: 5px;
+        }
+    }
+
+    .input-container {
+        position: relative;
+
+        input {
+            border: none;
+            width: 363px;
+            height: 57px;
+            flex-shrink: 0;
+            border-radius: 3px;
+            border: 1px solid rgba(28, 55, 90, 0.16);
+            margin-bottom: 16px;
+
+            &:focus {
+                border-color: #1676F3;
+            }
+        }
+
+        .eye-icon {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            right: 5px;
+            cursor: pointer;
+            background: url(../../assets/icon/Eye.svg) center center/cover no-repeat;
+            width: 20px;
+            height: 15.71px;
+            margin-right: 16px;
+        }
+    }
+
+    &:focus-within label {
+        color: #1676F3;
+    }
+
+
+
+    .error-message {
+        color: red;
+
+    }
+
+    .error {
+        border-color: red;
+
+    }
+}
