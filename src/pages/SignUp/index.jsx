@@ -63,7 +63,7 @@ const SignUp = () => {
             </div>
             <Button
               type="submit"
-              isFormValid={isDirty && isValid && Object.keys(errors).length === 0}>
+             >
               Get Started
             </Button>
             <p>

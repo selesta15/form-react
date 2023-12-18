@@ -32,7 +32,7 @@ const Input = ({ name, type, label, placeholder, requireConfirm = false, require
             required: required ? 'This field is required' : false,
             minLength: {
               value: 6,
-              message: 'Password must be at least 8 characters long'
+              message: 'Password must be at least 6 characters long'
             },
             ...(requireConfirm && {
               validate: value =>
