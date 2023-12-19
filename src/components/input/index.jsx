@@ -4,6 +4,7 @@ import { useState } from 'react';
 import styled from './styled.module.scss';
 
 
+
 const Input = ({ name, type, label, placeholder, requireConfirm = false, required }) => {
   const { register, formState: { errors, dirtyFields }, watch, control } = useFormContext();
   const [showPassword, setShowPassword] = useState(false);
@@ -28,17 +29,8 @@ const Input = ({ name, type, label, placeholder, requireConfirm = false, require
           name={name}
           type={showPassword ? 'text' : 'password'}
           placeholder={placeholder}
-          {...register(name, {
-            required: required ? 'This field is required' : false,
-            minLength: {
-              value: 6,
-              message: 'Password must be at least 6 characters long'
-            },
-            ...(requireConfirm && {
-              validate: value =>
-                value === password || 'Passwords do not match'
-            })
-          })}
+          {...register(name)}
+    
         />
         <i className={styled['eye-icon']} onClick={togglePasswordVisibility}></i>
       </div>
@@ -64,15 +56,6 @@ export default Input;
 
 
 
-
-
-
-
-
-
-
-
-  
 
 
 

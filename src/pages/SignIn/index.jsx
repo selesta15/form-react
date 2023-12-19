@@ -6,11 +6,27 @@ import Input from '../../components/input'
 import Checkbox from '../../components/checkbox'
 import Button from '../../components/button'
 import { Link } from 'react-router-dom';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
 const SignIn = () => {
-    const methods = useForm({ mode: 'onChange' });
+    const schema = yup.object().shape({
+        email: yup.string()
+          .email('Invalid email') 
+          .required('Email is required'), 
+        password: yup.string()
+          .required('Password is required')
+          .min(6, 'Password must be at least 6 characters long'),
+        confirmPassword: yup.string()
+          .oneOf([yup.ref('password'), null], 'Passwords must match') 
+          .required('Confirm password is required')
+      });
+      
+    const methods = useForm({ mode: 'onChange', resolver: yupResolver(schema) });
     const { handleSubmit, formState } = methods;
     const { isDirty, isValid, errors } = formState;
+
+
 
     const onSubmit = (data) => {
         console.log(data);

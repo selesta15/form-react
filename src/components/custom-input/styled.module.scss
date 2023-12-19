@@ -2,7 +2,7 @@
     margin-top: 16px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+   
 
     .label {
         color: rgba(27, 43, 65, 0.72);
@@ -33,6 +33,19 @@
 
     &:focus-within label {
         color: #1676F3; 
+    }
+
+    .error-message {
+        color: red;
+        
+
+    }
+
+    &.error {
+        input {
+            border-color: red;
+        }
+
     }
 
 }
